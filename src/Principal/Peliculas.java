@@ -4,14 +4,18 @@ public class Peliculas {
 	private int id;
 	private String nombre;
 	private Categorias categorias;
-	
+	static int cont=0;
 	public Peliculas() {
-		
+		cont++;
+		this.id=cont;
+		this.nombre="";
+		this.categorias = new Categorias();
 	}
 	
 	public Peliculas(String nombre, Categorias categorias)
 	{
-		super();
+		cont++;
+		this.id=cont;
 		this.nombre = nombre;
 		this.categorias = categorias;
 	}
@@ -31,8 +35,8 @@ public class Peliculas {
 	public Categorias getCategorias() {
 		return categorias;
 	}
-	public void setCategorias(Categorias categorias) {
-		this.categorias = categorias;
+	public void setCategorias(Object object) {
+		this.categorias = (Categorias) object;
 	}
 	
 	

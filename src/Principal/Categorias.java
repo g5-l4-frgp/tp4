@@ -1,16 +1,20 @@
 package Principal;
 
 public class Categorias {
+	
 	private int id;
 	private String nombre;
 	
-	public Categorias() {
-		
+	public Categorias( ) {
+	
+		this.id=0;
+		this.nombre="";
 	}
 	
-	public Categorias(String nombre)
+	public Categorias(int i,String nombre)
 	{
-		super();
+		
+		this.id=i;
 		this.nombre = nombre;
 	}
 	
@@ -25,6 +29,11 @@ public class Categorias {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
+	}
+
+	@Override
+	public String toString() {
+		return nombre;
 	}
 	
 }
