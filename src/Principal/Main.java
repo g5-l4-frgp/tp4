@@ -10,6 +10,7 @@ public class Main {
 				try {
 					VentanaPrincipal frame = new VentanaPrincipal();
 					frame.setVisible(true);
+					frame.setSize(500,500);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
