@@ -1,6 +1,10 @@
 package Principal;
 
 public class Peliculas {
+	@Override
+	public String toString() {
+		return getId()+" - " + getNombre();
+	}
 	private int id;
 	private String nombre;
 	private Categorias categorias;

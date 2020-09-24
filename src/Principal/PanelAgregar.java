@@ -73,7 +73,8 @@ public class PanelAgregar extends JPanel {
 				peliculas.setNombre(txtnombre.getText());
 				peliculas.setCategorias(cmbgenero.getSelectedItem());
 				listModel.addElement(peliculas);
-				System.out.println(peliculas.getNombre()+peliculas.getCategorias()+peliculas.getId()+peliculas.getCategorias().getId());
+				txtnombre.setText("");
+				cmbgenero.setSelectedIndex(0);
 			}
 		});
 	}
