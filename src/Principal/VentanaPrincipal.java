@@ -3,9 +3,12 @@ package Principal;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -17,6 +20,7 @@ import java.awt.event.ActionEvent;
 public class VentanaPrincipal extends JFrame {
 
 	private JPanel contentPane;
+	private DefaultListModel <Peliculas> ListModel;
 
 	public VentanaPrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,11 +35,15 @@ public class VentanaPrincipal extends JFrame {
 		mnPeliculas.setBackground(Color.GRAY);
 		menuBar.add(mnPeliculas);
 		
+		ListModel= new DefaultListModel<Peliculas>();
+		
 		JMenuItem mntmAgregar = new JMenuItem("Agregar");
 		mntmAgregar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				contentPane.removeAll();
 				PanelAgregar agregar = new PanelAgregar();
+				
+				agregar.setListModel(ListModel);
 				contentPane.add(agregar);
 				contentPane.repaint();
 				contentPane.revalidate();
@@ -48,6 +56,8 @@ public class VentanaPrincipal extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				contentPane.removeAll();
 				PanelListar listar =  new PanelListar(); 
+				listar.setDefaultListModel(ListModel);
+				
 				contentPane.add(listar);
 				contentPane.repaint();
 				contentPane.revalidate();
