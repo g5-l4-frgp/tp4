@@ -43,5 +43,13 @@ public class Peliculas {
 		this.categorias = (Categorias) object;
 	}
 	
+	public boolean ValidarPelicula(String pelicula, int categoria) {
+		if(pelicula.equals(""))
+			return false;
+		if(categoria == 0)
+			return false;
+		return true;
+	
+	}
 	
 }
