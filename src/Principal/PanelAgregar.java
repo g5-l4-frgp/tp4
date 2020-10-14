@@ -13,6 +13,9 @@ import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.event.ActionListener;
+import java.text.Collator;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.IllegalFormatCodePointException;
 import java.awt.event.ActionEvent;
 
@@ -22,7 +25,8 @@ public class PanelAgregar extends JPanel {
 	private JButton btnAceptar ;
 	private DefaultListModel<Peliculas>listModel;
 	static int contador = 1;
-	
+
+
 	
 	public PanelAgregar() {
 		setLayout(null);
@@ -79,13 +83,18 @@ public class PanelAgregar extends JPanel {
 					cmbgenero.setSelectedIndex(0);
 					contador ++;
 					lblNumerodeid.setText(String.valueOf(contador));
+					
 				}
+				
 			}
-		});
+
+		}
+		);
 	}
 
 
 	public void setListModel(DefaultListModel<Peliculas> listModel) {
 		this.listModel = listModel;
 	}
+
 }
