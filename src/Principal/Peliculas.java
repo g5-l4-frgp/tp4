@@ -3,7 +3,7 @@ package Principal;
 public class Peliculas {
 	@Override
 	public String toString() {
-		return getId()+" - " + getNombre();
+		return getId() + " - " + getNombre() + "-" + getCategorias();
 	}
 	private int id;
 	private String nombre;

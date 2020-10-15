@@ -13,8 +13,10 @@ import java.util.Comparator;
 public class PanelListar extends JPanel {
 	
 	
+
 	private JList<Peliculas> Jlist;
 	private DefaultListModel<Peliculas> listmodel1;
+	private JLabel lblPeliculas;
 
 	public PanelListar() {
 		setLayout(null);
@@ -23,7 +25,7 @@ public class PanelListar extends JPanel {
 		Jlist.setBounds(100, 33, 316, 225);
 		add(Jlist);
 		
-		JLabel lblPeliculas = new JLabel("Peliculas");
+		lblPeliculas = new JLabel("Peliculas");
 		lblPeliculas.setFont(new Font("Arial", Font.BOLD, 14));
 		lblPeliculas.setBounds(29, 127, 74, 14);
 		add(lblPeliculas);
@@ -49,13 +51,7 @@ public class PanelListar extends JPanel {
 		
 		Collator comparador = Collator.getInstance();
 		comparador.setStrength(Collator.PRIMARY);
-		// Collections.sort(lista,(x, y) -> comparador.compare(x.getNombre(), y.getNombre()));
-		Collections.sort(lista, new Comparator<Peliculas>() {
-			   public int compare(Peliculas obj1, Peliculas obj2) {
-			      return obj1.getNombre().compareTo(obj2.getNombre());
-			   }
-			});
-
+		Collections.sort(lista,(x, y) -> comparador.compare(x.getNombre(), y.getNombre()));
 		listmodel2.clear();
 		for(Peliculas p:lista)
 		{
@@ -63,5 +59,20 @@ public class PanelListar extends JPanel {
 		}
 		
 		return listmodel2;
+	}
+	public JList<Peliculas> getJlist() {
+		return Jlist;
+	}
+	
+	public void setJlist(JList<Peliculas> jlist) {
+		Jlist = jlist;
+	}
+	
+	public JLabel getLblPeliculas() {
+		return lblPeliculas;
+	}
+	
+	public void setLblPeliculas(JLabel lblPeliculas) {
+		this.lblPeliculas = lblPeliculas;
 	}
 }

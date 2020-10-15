@@ -22,7 +22,13 @@ import java.awt.event.ActionEvent;
 public class PanelAgregar extends JPanel {
 	private JTextField txtnombre;
 	private JComboBox<Categorias> cmbgenero;
-	private JButton btnAceptar ;
+	private JButton btnAceptar;
+	private JLabel ID;
+	private JLabel lblNombre;
+
+
+	private JLabel lblGenero;
+	private JLabel lblNumerodeid;
 	private DefaultListModel<Peliculas>listModel;
 	static int contador = 1;
 
@@ -40,22 +46,22 @@ public class PanelAgregar extends JPanel {
 		add(txtnombre);
 		txtnombre.setColumns(10);
 		
-		JLabel ID = new JLabel("ID");
+		ID = new JLabel("ID");
 		ID.setFont(new Font("Tahoma", Font.BOLD, 14));
 		ID.setBounds(97, 89, 46, 14);
 		add(ID);
 		
-		JLabel lblNombre = new JLabel("Nombre");
+		lblNombre = new JLabel("Nombre");
 		lblNombre.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNombre.setBounds(97, 126, 62, 17);
 		add(lblNombre);
 		
-		JLabel lblGenero = new JLabel("Genero");
+		lblGenero = new JLabel("Genero");
 		lblGenero.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblGenero.setBounds(97, 167, 62, 17);
 		add(lblGenero);
 		
-		JLabel lblNumerodeid = new JLabel(String.valueOf(contador));
+		lblNumerodeid = new JLabel(String.valueOf(contador));
 		lblNumerodeid.setFont(new Font("Tahoma", Font.BOLD, 14));
 		lblNumerodeid.setBounds(268, 89, 70, 14);
 		add(lblNumerodeid);
@@ -88,13 +94,83 @@ public class PanelAgregar extends JPanel {
 				
 			}
 
-		}
-		);
+		});
 	}
+
 
 
 	public void setListModel(DefaultListModel<Peliculas> listModel) {
 		this.listModel = listModel;
 	}
 
+
+	
+	public JTextField getTxtnombre() {
+		return txtnombre;
+	}
+	
+	
+	public void setTxtnombre(JTextField txtnombre) {
+		this.txtnombre = txtnombre;
+	}
+	
+	
+	public JComboBox<Categorias> getCmbgenero() {
+		return cmbgenero;
+	}
+	
+	
+	public void setCmbgenero(JComboBox<Categorias> cmbgenero) {
+		this.cmbgenero = cmbgenero;
+	}
+	
+	
+	public JButton getBtnAceptar() {
+		return btnAceptar;
+	}
+	
+	
+	public void setBtnAceptar(JButton btnAceptar) {
+		this.btnAceptar = btnAceptar;
+	}
+	
+	
+	public JLabel getID() {
+		return ID;
+	}
+	
+	
+	public void setID(JLabel iD) {
+		ID = iD;
+	}
+	
+	
+	public JLabel getLblNombre() {
+		return lblNombre;
+	}
+	
+	
+	public void setLblNombre(JLabel lblNombre) {
+		this.lblNombre = lblNombre;
+	}
+	
+	
+	public JLabel getLblGenero() {
+		return lblGenero;
+	}
+	
+	
+	public void setLblGenero(JLabel lblGenero) {
+		this.lblGenero = lblGenero;
+	}
+	
+	
+	public JLabel getLblNumerodeid() {
+		return lblNumerodeid;
+	}
+	
+	
+	public void setLblNumerodeid(JLabel lblNumerodeid) {
+		this.lblNumerodeid = lblNumerodeid;
+	}
 }
